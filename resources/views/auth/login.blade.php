@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>Hotel System Login</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,8 +13,19 @@
   <link rel="stylesheet" href="{{ asset('backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
+  <style type="text/css">
+    .view_parent_image1{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url({{ asset('backend/dist/img/login/02.jpg')}}) no-repeat center center fixed;
+  background-size: cover;
+}
+</style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page view_parent_image1">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
@@ -69,14 +80,14 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center mt-2 mb-3">
+      <!--<div class="social-auth-links text-center mt-2 mb-3">
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
         </a>
         <a href="#" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
         </a>
-      </div>
+      </div>-->
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
@@ -93,7 +104,7 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script> 
+<script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->

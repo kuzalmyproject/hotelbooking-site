@@ -53,10 +53,10 @@ class AdminController extends Controller
             'photo' => ['mimes:jpg,bmp,png'],
 
 
-        
+
         ]);
 
-       
+
 
         if($request->file('photo')){
             @unlink($old_photo);
@@ -66,17 +66,17 @@ class AdminController extends Controller
 
             Image::make($image)->resize(300,300)->save('upload/admin_images/'.$name_gen);
             $save_url = 'upload/admin_images/'.$name_gen;
-          
+
             $admin->name=$request->name;
             $admin->email=$request->email;
-$admin->photo=$save_url;
+             $admin->photo=$save_url;
             $admin->save();
 
             $notification = array(
                 'message' => 'Admin Profile Updated Successfully',
                 'alert-type' => 'info'
              );
-            
+
              return redirect()->route('admin.dashboard')->with($notification);
 
         }
@@ -92,13 +92,13 @@ $admin->photo=$save_url;
                 'message' => 'Admin Profile Updated Successfully',
                 'alert-type' => 'info'
              );
-            
+
              return redirect()->route('admin.dashboard')->with($notification);
         }
-        
-        
 
-        
+
+
+
     }
 
     public function adminPasswordChange(){
@@ -121,7 +121,7 @@ $admin->photo=$save_url;
             'message' => 'Password Updated Successfully',
             'alert-type' => 'warning'
          );
-        
+
          return redirect()->route('admin.dashboard')->with($notification);
     }
 }
