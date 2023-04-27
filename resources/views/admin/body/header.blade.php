@@ -7,6 +7,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="nav-link">Home</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('/telescope') }}" class="nav-link" target="_blank">Telescopy</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
