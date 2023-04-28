@@ -29,7 +29,7 @@ Route::controller(IndexController::class)->group(function () {
 
 });
 
-
+Route::group(['middleware' => 'prevent-back-history'],function(){
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -49,7 +49,8 @@ Route::middleware('auth','role:admin')->group(function () {
     Route::patch('/admin/profile/update/{id}', [AdminController::class, 'adminProfileUpdate'])->name('admin.profile.update');
     Route::get('/admin/password/change', [AdminController::class, 'adminPasswordChange'])->name('admin.password.change');
     Route::put('/admin/password/update', [AdminController::class, 'adminPasswordupdate'])->name('admin.password.update');
+});
 
+require __DIR__.'/auth.php';
 
 });
-require __DIR__.'/auth.php';
