@@ -65,13 +65,13 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('admin/profile/view')}}" class="nav-link {{ $route == 'profile.view'? 'active': '' }}">
+                <a href="{{route('admin.profile.view')}}" class="nav-link {{ $route == 'admin.profile.view'? 'active': '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Your Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.password.change')}}" class="nav-link {{ $route == 'password.view'? 'active': '' }}">
+                <a href="{{route('admin.password.change')}}" class="nav-link {{ $route == 'admin.password.change'? 'active': '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Change Password</p>
                 </a>
