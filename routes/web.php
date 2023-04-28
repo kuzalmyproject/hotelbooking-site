@@ -44,9 +44,12 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth','role:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
-    Route::get('/admin/profile/view', [AdminController::class, 'adminProfileView'])->name('admin.profile.view');
-    Route::get('/admin/profile/edit', [AdminController::class, 'adminProfileEdit'])->name('admin.profile.edit');
-    Route::patch('/admin/profile/update/{id}', [AdminController::class, 'adminProfileUpdate'])->name('admin.profile.update');
+});
+
+Route::middleware('auth','role:admin')->prefix('profile')->group(function () {
+    Route::get('/admin/view', [AdminController::class, 'adminProfileView'])->name('admin.profile.view');
+    Route::get('/admin/edit', [AdminController::class, 'adminProfileEdit'])->name('admin.profile.edit');
+    Route::patch('/admin/update/{id}', [AdminController::class, 'adminProfileUpdate'])->name('admin.profile.update');
     Route::get('/admin/password/change', [AdminController::class, 'adminPasswordChange'])->name('admin.password.change');
     Route::put('/admin/password/update', [AdminController::class, 'adminPasswordupdate'])->name('admin.password.update');
 });
